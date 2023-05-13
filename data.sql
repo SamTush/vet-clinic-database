@@ -76,9 +76,8 @@ SET owner_id =
         ELSE NULL
      END);
 
-
 INSERT INTO vets (name, age, date_of_graduation)
-VALUES ('William Tatcher', 40, '2000-4-23'),('Maisy', 26, '2019-1-17'),('Stephanie Mendez', 64, '1981-5-4'),('Jack Harkness', 38, '2008-6-8');
+VALUES ('William Tatcher', 45, '2000-4-23'),('Maisy Smith', 26, '2019-1-17'),('Stephanie Mendez', 64, '1981-5-4'),('Jack Harkness', 38, '2008-6-8');
 
 INSERT INTO specializations (vet_id, species_id)
 vet_clinic-# VALUES (1, 1), (3, 2), (3, 1), (4, 2);
