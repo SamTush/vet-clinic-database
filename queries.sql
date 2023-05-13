@@ -104,3 +104,63 @@ JOIN owners ON animals.owner_id = owners.id
 GROUP BY owners.full_name
 ORDER BY num_animals_owned DESC
 LIMIT 1;
+
+SELECT animals.name FROM animals JOIN visits ON animals.id = visits.animal_id
+JOIN vets ON visits.vet_id = vets.id WHERE vet_id = 1 ORDER BY date_visited DESC LIMIT 1;
+
+SELECT COUNT(DISTINCT animal_id) FROM visits
+WHERE vet_id = (SELECT id FROM vets WHERE name = 'Stephanie Mendez');
+
+SELECT vets.name, species.name AS specialization FROM vets 
+LEFT JOIN specializations ON vets.id = specializations.vet_id
+LEFT JOIN species ON specializations.species_id = species.id;
+
+SELECT animals.name FROM animals
+JOIN visits ON animals.id = visits.animal_id  
+JOIN vets ON visits.vet_id = vets.id   
+WHERE vets.name LIKE 'Stephanie Mendez'          
+AND visits.date_visited BETWEEN '2020-4-1' AND '2020-08-30';
+
+SELECT animals.name, COUNT(*) AS num_visits
+FROM animals
+JOIN visits ON animals.id = visits.animal_id
+GROUP BY animals.id
+ORDER BY num_visits DESC
+LIMIT 1;
+
+SELECT animals.name, visits.date_visited
+FROM visits
+JOIN vets ON visits.vet_id = vets.id
+JOIN animals ON visits.animal_id = animals.id
+WHERE vets.name = 'Maisy Smith'
+ORDER BY visits.date_visited ASC
+LIMIT 1;
+
+SELECT animals.name AS animal_name, vets.name AS vet_name, visits.date_visited
+FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+ORDER BY visits.date_visited DESC
+LIMIT 1;
+
+SELECT COUNT(*)
+FROM visits
+JOIN vets ON visits.vet_id = vets.id
+JOIN specializations ON vets.id = specializations.vet_id
+JOIN animals ON visits.animal_id = animals.id
+JOIN species ON animals.species_id = species.id
+WHERE NOT EXISTS (
+  SELECT *
+  FROM specializations s
+  WHERE s.vet_id = vets.id AND s.species_id = species.id
+);
+
+SELECT species.name, COUNT(*) AS num_visits
+FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN species ON animals.species_id = species.id
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy'
+GROUP BY species.name    
+ORDER BY num_visits DESC 
+LIMIT 1;
