@@ -160,7 +160,7 @@ FROM visits
 JOIN animals ON visits.animal_id = animals.id
 JOIN species ON animals.species_id = species.id
 JOIN vets ON visits.vet_id = vets.id
-WHERE vets.name = 'Maisy'
+WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name    
 ORDER BY num_visits DESC 
 LIMIT 1;
