@@ -26,7 +26,6 @@ WHERE weight_kg >= 10.4 AND weight_kg <=17.3;
 
 
 -- Add a column species
-
 ALTER TABLE animals ADD COLUMN species VARCHAR(50);
 
 -- transactions
