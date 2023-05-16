@@ -169,3 +169,7 @@ CREATE INDEX idx_animal_id ON visits (animal_id);
 SET work_mem = '128MB';
 
 ANALYZE visits;
+
+CREATE INDEX idx_email ON owners (email);
+
+ANALYZE owners;
