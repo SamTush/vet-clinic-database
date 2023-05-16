@@ -74,17 +74,32 @@ To run the project, execute the following command:
 
 Run this code in terminal after running postgresql app.
 
+<<<<<<< feature/normalize
 ```
   psql
 ```
+=======
+```
+  psql
+```
+>>>>>>> develop
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Samson**
+<<<<<<< feature/normalize
 
 - GitHub: [@githubhandle](https://github.com/SamTush)
+
+👤 **Patrick**
+
+- GitHub: [@githubhandle](https://github.com/Patfarmurs)
+=======
+
+- GitHub: [@githubhandle](https://github.com/SamTush)
+>>>>>>> develop
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
