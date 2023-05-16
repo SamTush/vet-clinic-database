@@ -163,3 +163,9 @@ WHERE vets.name = 'Maisy'
 GROUP BY species.name    
 ORDER BY num_visits DESC 
 LIMIT 1;
+
+CREATE INDEX idx_animal_id ON visits (animal_id);
+
+SET work_mem = '128MB';
+
+ANALYZE visits;
