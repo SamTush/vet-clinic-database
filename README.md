@@ -86,6 +86,10 @@ Run this code in terminal after running postgresql app.
 
 - GitHub: [@githubhandle](https://github.com/SamTush)
 
+👤 **Patrick**
+
+- GitHub: [@githubhandle](https://github.com/Patfarmurs)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
