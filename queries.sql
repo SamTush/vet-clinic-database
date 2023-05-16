@@ -173,3 +173,8 @@ ANALYZE visits;
 CREATE INDEX idx_email ON owners (email);
 
 ANALYZE owners;
+
+CREATE INDEX idx_vet ON visits (vet_id);
+
+ANALYZE visits;
+
