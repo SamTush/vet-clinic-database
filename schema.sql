@@ -50,3 +50,16 @@ animal_id INTEGER REFERENCES animals (id),
 vet_id INTEGER REFERENCES vets (id),
 date_visited DATE
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE TABLE relationships (
+    id serial PRIMARY KEY,
+    species_id integer,
+    owner_id integer
+);
+
+ALTER TABLE animals
+DROP COLUMN species_id,
+DROP COLUMN owner_id;
